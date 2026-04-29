@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useOutletContext } from "react-router-dom";
 
 export const Home = () => {
-  const [posts, setPosts] = useState([]);
+  const { posts, setPosts } = useOutletContext();
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-
   const handleDelete = (id) => {
     const filteredBlogs = posts.filter((post) => post.id !== id);
     setPosts(filteredBlogs);
@@ -61,7 +60,6 @@ export const Home = () => {
             </button>
           </div>
         ))}
-      {/* <Outlet /> */}
     </div>
   );
 };
