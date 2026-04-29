@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Home } from "./components/home";
-import { NewBlog } from "./components/newBlog";
 import { Content } from "./components/content";
-import { Test } from "./components/test";
-import { Header } from "./components/header";
+import { Create } from "./components/create";
+import { BlogDetails } from "./components/blogDetails";
 
 export const App = () => {
   return (
@@ -11,9 +10,8 @@ export const App = () => {
       <Routes>
         <Route path="/" element={<Content />}>
           <Route index element={<Home />} />
-          <Route path="newblog" element={<NewBlog />} />
-          <Route path="test" element={<Test />} />
-          <Route path="header" element={<Header />} />
+          <Route path="create" element={<Create />} />
+          <Route path="blogs/:id" element={<BlogDetails />} />
         </Route>
       </Routes>
     </BrowserRouter>

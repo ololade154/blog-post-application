@@ -8,14 +8,14 @@ export const NavBar = () => {
           The dojo Blog
         </h1>
         <div className=" flex gap-2.5 md:gap-4 items-center ">
-          <a
-            href="/"
+          <Link
+            to="/"
             className="hover:text-[#f1356d] text-[16px] md:text-[15px] "
           >
             Home
-          </a>
+          </Link>
           <Link
-            to="/newblog"
+            to="/create"
             className="text-white bg-[#f1356d] rounded-sm px-2 py-1 text-[16px] md:text-[15px]"
           >
             New Blog

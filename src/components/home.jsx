@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-// import { Outlet } from "react-router-dom";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -35,6 +34,7 @@ export const Home = () => {
 
   return (
     <div>
+      <h1 className="font-bold text-[25px]">All Blogs!</h1>
       {isPending && <div>Loading....</div>}
       {error && <div>{error}</div>}
       {!error &&
@@ -43,18 +43,13 @@ export const Home = () => {
             key={post.id}
             className="md:mt-10 md:py-6 md:px-10 bg-white border-b border-b-[#fafafa] hover:shadow-sm flex items-center justify-between"
           >
-            <div>
-              <h2 className="md:text-[20px] font-bold md:mb-8 text-[#f1356d]">
-                {post.title}
-              </h2>
-              <p>{post.body}</p>
-              <Link
-                className="bg-[rgb(241,53,109)] text-white md:px-2 md:py-1 rounded-md"
-                to="/test"
-              >
-                test
-              </Link>
-            </div>
+            <Link to={`/blogs/${post.id}`}>
+              <div>
+                <h2 className="md:text-[20px] font-bold md:mb-8 text-[#f1356d]">
+                  {post.title}
+                </h2>
+              </div>
+            </Link>
 
             <button
               className="bg-[rgb(241,53,109)] text-white md:px-2 md:py-1 rounded-md"
