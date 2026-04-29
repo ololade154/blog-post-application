@@ -1,13 +1,21 @@
+import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { Home } from "./components/home";
-import { NavBar } from "./components/navBar";
+import { NewBlog } from "./components/newBlog";
+import { Content } from "./components/content";
+import { Test } from "./components/test";
+import { Header } from "./components/header";
 
 export const App = () => {
   return (
-    <div className="text-[#333] font-medium md:max-w-5xl mx-auto px-6 py-8 md:px-14 md:py-7">
-      <NavBar />
-      <div>
-        <Home />
-      </div>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Content />}>
+          <Route index element={<Home />} />
+          <Route path="newblog" element={<NewBlog />} />
+          <Route path="test" element={<Test />} />
+          <Route path="header" element={<Header />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 };

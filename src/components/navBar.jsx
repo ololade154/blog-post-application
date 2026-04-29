@@ -1,7 +1,9 @@
+import { Link } from "react-router-dom";
+
 export const NavBar = () => {
   return (
     <div>
-      <nav className="flex w-full md:max-w-5xl items-center justify-between">
+      <nav className="flex w-full md:max-w-5xl items-center justify-between ">
         <h1 className="text-[#f1356d] font-bold md:text-[25px] text-[18px]">
           The dojo Blog
         </h1>
@@ -12,12 +14,12 @@ export const NavBar = () => {
           >
             Home
           </a>
-          <a
-            href="/create"
+          <Link
+            to="/newblog"
             className="text-white bg-[#f1356d] rounded-sm px-2 py-1 text-[16px] md:text-[15px]"
           >
             New Blog
-          </a>
+          </Link>
         </div>
       </nav>
     </div>

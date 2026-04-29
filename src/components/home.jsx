@@ -1,4 +1,6 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+// import { Outlet } from "react-router-dom";
 
 export const Home = () => {
   const [posts, setPosts] = useState([]);
@@ -32,7 +34,7 @@ export const Home = () => {
   }, []);
 
   return (
-    <div className="md:mt-10">
+    <div>
       {isPending && <div>Loading....</div>}
       {error && <div>{error}</div>}
       {!error &&
@@ -45,7 +47,13 @@ export const Home = () => {
               <h2 className="md:text-[20px] font-bold md:mb-8 text-[#f1356d]">
                 {post.title}
               </h2>
-              <p>Written by: {post.body}</p>
+              <p>{post.body}</p>
+              <Link
+                className="bg-[rgb(241,53,109)] text-white md:px-2 md:py-1 rounded-md"
+                to="/test"
+              >
+                test
+              </Link>
             </div>
 
             <button
@@ -58,6 +66,7 @@ export const Home = () => {
             </button>
           </div>
         ))}
+      {/* <Outlet /> */}
     </div>
   );
 };
