@@ -1,14 +1,25 @@
 import { useEffect, useState } from "react";
-import { Link, useOutletContext } from "react-router-dom";
+import { Link, useNavigate, useOutletContext } from "react-router-dom";
 
 export const Home = () => {
   const { posts, setPosts } = useOutletContext();
   const [isPending, setIsPending] = useState(true);
   const [error, setError] = useState(null);
-  const handleDelete = (id) => {
-    const filteredBlogs = posts.filter((post) => post.id !== id);
-    setPosts(filteredBlogs);
-  };
+  // const { id } = useParams();
+  // const navigate = useNavigate();
+  // const handleDelete = (id) => {
+  //   const filteredBlogs = posts.filter((post) => post.id !== id);
+  //   setPosts(filteredBlogs);
+  // };
+  // const handleDelete = () => {
+  //   fetch(`https://dummyjson.com/posts/ ${id}`, {
+  //     method: "DELETE",
+  //   })
+  //     .then((res) => res.json())
+  //     .then(() => {
+  //       navigate("/");
+  //     });
+  // };
 
   useEffect(() => {
     setTimeout(() => {
@@ -50,14 +61,14 @@ export const Home = () => {
               </div>
             </Link>
 
-            <button
+            {/* <button
               className="bg-[rgb(241,53,109)] text-white md:px-2 md:py-1 rounded-md"
               onClick={() => {
                 handleDelete(post.id);
               }}
             >
               Delete
-            </button>
+            </button> */}
           </div>
         ))}
     </div>
